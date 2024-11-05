@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Socket.io Chat</title>
+  </head>
+  <body>
+    <h1>Keep me Alive</h1>
+    <p>Click me to keep increase my health. If you don't click me, I'll lose health. If my health reaches 0, I'll die!</p>
+    
+    <p id="health"></p>
+    <div id="num-clients"></div>
+    
+    <img id="creature" src = "creature.webp" width = "300">
+
+    <aside class="chatbox">
+      <input id="messageInput" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
+      <div id="messages"></div>
+    </aside>
+    
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

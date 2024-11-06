@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100%;
+    font-size: 2vw;
+    background-image: url('/background.gif');
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
+    
+}
+
+header {
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    /* margin: 1rem; */
+    padding: 0rem 0rem;
+    width: 100%;
+    color: white;
+    text-align: right;
+    font-family: "Tiny5", serif;
+    font-size: 1rem;
+    z-index: 2;
+
+    .head-item {
+        padding: 1rem;
+        border: 1px solid red;
+        flex-basis: 20%;
+    }
+
+    #title {
+        flex-grow: 2;
+    }
+}
+
+h1 {
+    text-align: center;
+    font-family: "Tiny5", serif;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 0.15rem 0.15rem 0rem #02221c;
+    margin-top: 1.5rem;
+    padding: 0;
+}
+
+p {
+    text-align: center;
+    font-family: "Tiny5", serif;
+    font-size: 1rem;
+    padding: 1rem;
+    color: white;
+    padding: 0;
+}
+
+#creature {
+  position: fixed;
+  bottom: -6.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30vw; 
+  height: auto; 
+}
+
+#health {
+    /* display: flex;
+    align-content: center;
+    justify-content: center; */
+    text-align: center;
+    font-family: "Tiny5", serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 2rem;
+    background-image: url("health.png");
+    background-size: 4rem; 
+    background-repeat: no-repeat; 
+    background-position: center;
+    margin: 0;
+}
+
+#clients {
+    p {
+        margin: 0;
+    }
+    #num-clients {
+        font-family: "Tiny5", serif;
+        font-size: 2rem;
+        margin:0;
+    }
+}

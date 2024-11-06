@@ -3,24 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Socket.io Chat</title>
+    <title>Click to Heal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Keep me Alive</h1>
-    <p>Click me to keep increase my health. If you don't click me, I'll lose health. If my health reaches 0, I'll die!</p>
-    
-    <p id="health"></p>
-    <div id="num-clients"></div>
-    
-    <img id="creature" src = "creature.webp" width = "300">
+    <header>
+      <div class="head-item">
+        <p id="health"></p>
+      </div>
+      
+      <div class="head-item" id="title">
+        <h1>KEEP ME ALIVE</h1>
+      </div>
 
-    <aside class="chatbox">
+      <div class="head-item" id="clients">
+        <p>CAREGIVERS: <p id="num-clients">0</p></p>
+      </div>
+    </header>
+
+    <section id="directions">
+      <p>CLICK ME TO HEAL MY HEALTH.</p>
+
+      <p>
+        IF YOU DON'T CLICK ME, I'LL LOSE HEALTH. IF MY HEALTH REACHES 0, I'LL
+        DIE!
+      </p>
+      <p id="close">X</p>
+    </section>
+
+    <!-- <div id="num-clients"></div> -->
+
+    <img id="creature" src="alive.gif" width="300" />
+
+    <!-- <aside class="chatbox">
       <input id="messageInput" placeholder="Type a message..." />
       <button onclick="sendMessage()">Send</button>
       <div id="messages"></div>
-    </aside>
-    
-    
+    </aside> -->
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="app.js"></script>
   </body>

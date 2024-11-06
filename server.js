@@ -14,12 +14,11 @@ app.use(express.static('public'));
 const server = http.createServer(app);
 const io = new Server(server);
 
-let delay = 3000;
+let delay = 1000;
 let creature = {}
 let numClients = 0;
 
-//adam drove
-
+//anna drove this section 
 // Handle socket connections
 io.on('connection', (socket) => {
   console.log('A user connected:', socket.id);
@@ -28,7 +27,7 @@ io.on('connection', (socket) => {
 
   //if you are the first client, init the creature
   if (numClients == 1) {
-    creature.health = 5;
+    creature.health = 25;
     creature.alive = true;
     console.log(creature);
     //initiate the timer

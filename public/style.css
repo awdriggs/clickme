@@ -29,7 +29,6 @@ header {
 
     .head-item {
         padding: 1rem;
-        border: 1px solid red;
         flex-basis: 20%;
     }
 
@@ -91,4 +90,13 @@ p {
         font-size: 2rem;
         margin:0;
     }
+}
+
+#asteroid {
+    position: fixed;
+ 
+    z-index: 1000;
+     bottom: -6.5vh;
+      left: 50%;
+      transform: translateX(-50%);
 }

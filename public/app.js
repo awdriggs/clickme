@@ -8,18 +8,12 @@ socket.on("newClient", (numClients) => {
 socket.on("health", (health) => {
   document.querySelector("#health").innerHTML = health;
   //change image based on health
-  if (health <= 20) {
+  if (health <= 0) {
+    document.querySelector("#creature").src = "dead.png";
+  } else if (health <= 20) {
     document.querySelector("#creature").src = "dying.gif";
   } else {
     document.querySelector("#creature").src = "alive.gif";
-  }
-});
-
-socket.on("health", (health) => {
-  document.querySelector("#health").innerHTML = health;
-  //change image based on health
-  if (health <= 0) {
-    document.querySelector("#creature").src = "dead.png";
   }
 });
 
@@ -30,11 +24,32 @@ socket.on("message", (data) => {
   document.getElementById("messages").appendChild(messageElement);
 });
 
-socket.on("death", () => {
-  document.querySelector("#creature").src = "dead.png";
+socket.on("asteroid", ()=> {
+  console.log("oh shit!")
+  //show the asteroid
+  let asteroid = document.createElement("img");
+  asteroid.src = "asteroid.gif";
 
-  //remove event listener for clicks
+  asteroid.id = "asteroid";
+
+  asteroid.addEventListener("click", () => {
+    socket.emit("asteroidClick", "Click!");
+  });
+
+  document.querySelector("body").append(asteroid);
+  
 });
+
+socket.on("destroyAsteroid", ()=> {
+  console.log("destroy the roid")
+  document.querySelector("#asteroid").remove();
+});
+
+// socket.on("death", () => {
+//   document.querySelector("#creature").src = "dead.png";
+
+//   //remove event listener for clicks
+// });
 
 // Send a message
 function sendMessage() {
@@ -45,3 +60,7 @@ function sendMessage() {
 document.querySelector("#creature").addEventListener("click", () => {
   socket.emit("click", "Click!");
 });
+
+document.querySelector("#close").addEventListener("click", () =>{
+  document.querySelector("#directions").style.display = "none";
+})

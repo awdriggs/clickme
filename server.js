@@ -43,14 +43,17 @@ io.on("connection", (socket) => {
       }
       
       io.emit("health", creature.health);
-
+      
       //
       
       //is health < 0?
       if (creature.health <= 0) {
+        
         creature.alive = false;
         console.log("Creature is dead");
-        io.emit("death"); //no args needed?
+        //io.emit("test", creature.health);
+        //io.emit("death", creature.health); // this is not working
+        // console.log("emitting death");
 
         //stop the interval
         clearInterval(countDown);
@@ -80,6 +83,7 @@ io.on("connection", (socket) => {
     io.emit("message", data);
   });
 
+  //listen for a click
   socket.on("click", (data) => {
     //console.log('Message received:', data);
 
@@ -119,3 +123,4 @@ io.on("connection", (socket) => {
 server.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+

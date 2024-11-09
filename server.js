@@ -5,8 +5,7 @@ import { Server } from "socket.io";
 
 // Create an Express app
 const app = express();
-const PORT = 3000;
-
+let port = process.env.PORT || 3000;
 // Serve static files from the "public" directory
 app.use(express.static("public"));
 

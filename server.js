@@ -121,7 +121,7 @@ io.on("connection", (socket) => {
 
 // Start the server
 server.listen(port, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${port}`);
 });
 
 console.log("server serving");

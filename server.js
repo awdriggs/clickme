@@ -6,6 +6,7 @@ import { Server } from "socket.io";
 // Create an Express app
 const app = express();
 let port = process.env.PORT || 3000;
+
 // Serve static files from the "public" directory
 app.use(express.static("public"));
 
@@ -119,7 +120,7 @@ io.on("connection", (socket) => {
 });
 
 // Start the server
-server.listen(PORT, () => {
+server.listen(port, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
 
